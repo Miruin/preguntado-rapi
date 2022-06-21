@@ -166,12 +166,11 @@ class Controllersuser {
                 return res.status(200).send({msg: 'el score de modo rush se ha salvado'})
                 
             }
-
-            if ((score_normal_usuario>= recordscore && modo == 'normal')) 
-            return res.status(200).send({msg: 'tienes un mejor record'})
-
+            
+            let scoreupdate = Number(recordscore) + Number(score_normal_usuario);
+            
             await pool.request()
-            .input('score', sql.Int, recordscore)
+            .input('score', sql.Int, scoreupdate)
             .input('nickname', req.user)
             .query(String(config.q4));
 
