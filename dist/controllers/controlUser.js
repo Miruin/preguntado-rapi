@@ -111,7 +111,6 @@ class Controllersuser {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let { recordscore, modo } = req.body;
-                console.log(recordscore + " " + modo + " " + req.user);
                 if (!recordscore && !modo)
                     return res.status(400).send({ msg: 'ERROR no hay score que salvar' });
                 if (!req.user)
