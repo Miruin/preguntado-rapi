@@ -142,6 +142,8 @@ class Controllersuser {
         try {
 
             let { recordscore, modo } = req.body;
+            console.log(recordscore+" "+modo+" "+req.user);
+            
             
             if(!recordscore && !modo) return res.status(400).send({msg: 'ERROR no hay score que salvar'})
             if(!req.user) return res.status(400).send({msg: 'ERROR no hay nadie con sesion activa'})
