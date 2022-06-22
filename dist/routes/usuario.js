@@ -9,6 +9,7 @@ const controlUser_1 = __importDefault(require("../controllers/controlUser"));
 const auth = passport_1.default.authenticate("jwt", { session: false });
 const optionalAuth = (req, res, next) => {
     if (req.headers["authorization"]) {
+        console.log("probando");
         auth(req, res, next);
     }
     else
