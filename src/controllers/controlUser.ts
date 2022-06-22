@@ -178,6 +178,11 @@ class Controllersuser {
             return res.status(200).send({msg: 'el score de modo normal se ha salvado'})
             
         } catch (error) {
+
+            console.error(error);
+
+            return res.status(500).send({msg: 'Error en el servidor'});
+            
             
         }
     }
