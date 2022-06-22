@@ -7,6 +7,8 @@ const auth = passport.authenticate("jwt", { session: false });
 
 const optionalAuth = (req: Request, res: Response, next: () => void) => {
   if (req.headers["authorization"]) {
+    console.log("probando");
+    
     auth(req, res, next);
   } else next();
 };
